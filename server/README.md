@@ -2,7 +2,12 @@
 
 Keycloak Server Docker image.
 
+Changes in this fork:
 
+- Added wsfed module
+- Proxy address forwarding enabled by default
+- Enabled feature: scripts upload
+- Enabled feature: admin fine grained authz
 
 ## Usage
 

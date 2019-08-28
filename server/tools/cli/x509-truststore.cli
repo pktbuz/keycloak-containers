@@ -1,4 +1,4 @@
-embed-server --server-config=$configuration_file --std-out=discard
+embed-server --server-config=$configuration_file --std-out=echo
 /subsystem=elytron/key-store=kcTrustStore:add(path=$keycloak_tls_truststore_file,type=JKS,credential-reference={clear-text=$keycloak_tls_truststore_password})
 /subsystem=elytron/trust-manager=kcTrustManager:add(key-store=kcTrustStore)
 if (outcome != success) of /subsystem=elytron/server-ssl-context=kcSSLContext:read-resource

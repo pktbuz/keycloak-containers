@@ -72,6 +72,18 @@ if [[ -n ${KEYCLOAK_IMPORT:-} ]]; then
     SYS_PROPS+=" -Dkeycloak.import=$KEYCLOAK_IMPORT"
 fi
 
+##########################
+# Enable Custom Features #
+##########################
+
+if [ "$ENABLE_UPLOAD_SCRIPTS" ]; then
+    SYS_PROPS+=" -Dkeycloak.profile.feature.upload_scripts=enabled"
+fi
+
+if [ "$ENABLE_ADMIN_FINE_GRAINED_AUTHZ" ]; then
+    SYS_PROPS+=" -Dkeycloak.profile.feature.admin_fine_grained_authz=enabled"
+fi
+
 ########################
 # JGroups bind options #
 ########################

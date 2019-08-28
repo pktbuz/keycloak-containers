@@ -1,0 +1,2 @@
+/subsystem=keycloak-server:list-add(name=providers, value="module:com.quest.keycloak-wsfed")
+/subsystem=keycloak-server/theme=defaults:list-add(name=modules, value="com.quest.keycloak-wsfed")

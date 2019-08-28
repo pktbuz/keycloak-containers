@@ -76,6 +76,15 @@ cd /opt/jboss/keycloak/modules/system/layers/keycloak/com/microsoft/sqlserver/jd
 curl -L https://repo1.maven.org/maven2/com/microsoft/sqlserver/mssql-jdbc/$JDBC_MSSQL_VERSION/mssql-jdbc-$JDBC_MSSQL_VERSION.jar > mssql-jdbc.jar
 cp /opt/jboss/tools/databases/mssql/module.xml .
 
+#######################
+# Create WSFED module #
+#######################
+
+mkdir -p /opt/jboss/keycloak/modules/system/layers/wsfed/com/quest/keycloak-wsfed/main/
+cd /opt/jboss/keycloak/modules/system/layers/wsfed/com/quest/keycloak-wsfed/main/
+curl -L -s https://github.com/pktbuz/keycloak-wsfed/releases/download/$KEYCLOAK_WSFED_VERSION/keycloak-wsfed-$KEYCLOAK_WSFED_VERSION.tar.gz | tar xvz
+echo "layers=keycloak,wsfed" > /opt/jboss/keycloak/modules/layers.conf 
+
 ######################
 # Configure Keycloak #
 ######################
